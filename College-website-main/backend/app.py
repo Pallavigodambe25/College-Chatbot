@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_from_directory
+from flask import Flask, request, jsonify
 from flask_cors import CORS
 from groq import Groq
 from rag_engine import search
@@ -12,17 +12,6 @@ CORS(app)
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# ------------------------------
-# Serve the frontend website
-# ------------------------------
-@app.route("/")
-def home():
-    return send_from_directory("../frontend", "index.html")
-
-
-# ------------------------------
-# Chatbot API
-# ------------------------------
 @app.route("/chat", methods=["POST"])
 def chat():
 
@@ -48,10 +37,5 @@ def chat():
 
     return jsonify({"reply": reply})
 
-
-# ------------------------------
-# Run Flask server
-# ------------------------------
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(port=5000)

@@ -250,7 +250,7 @@ function addMessage(message, isUser = false) {
 }
 
 
-/// Send message to Python backend
+// Send message to Python backend
 async function sendMessage() {
 
     const message = chatbotInput.value.trim();
@@ -264,7 +264,7 @@ async function sendMessage() {
 
     try {
 
-        const response = await fetch("/chat", {
+        const response = await fetch("http://localhost:5000/chat", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
