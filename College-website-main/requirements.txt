@@ -1,0 +1,9 @@
+flask
+flask-cors
+groq
+python-dotenv
+sentence-transformers
+faiss-cpu
+beautifulsoup4
+requests
+gunicorn
