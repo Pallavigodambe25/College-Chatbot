@@ -1,9 +1,10 @@
 flask
 flask-cors
+gunicorn
 groq
 python-dotenv
 sentence-transformers
 faiss-cpu
-beautifulsoup4
 requests
-gunicorn
+beautifulsoup4
+numpy
